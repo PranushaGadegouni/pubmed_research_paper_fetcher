@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "pranusha_gadegouni_pubmed_research_paper_fetcher"
+version = "0.1.0"
+description = "Fetch PubMed papers with pharma/biotech affiliated authors using spaCy-based classification"
+authors = ["Pranusha Gadegouni <pranushagadegouni@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{ include = "pubmed_research_paper_fetcher", from = "src" }]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+requests = "^2.31"
+typer = "^0.10"
+pandas = "^2.0"
+lxml = "^4.9"
+spacy = "^3.7.0"
+
+[tool.poetry.group.dev.dependencies]
+mypy = "^1.8"
+pytest = "^7.2"
+
+[tool.poetry.scripts]
+get-papers-list = "pubmed_research_paper_fetcher.cli:app"
